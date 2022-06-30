@@ -13,14 +13,14 @@ int main() {
         for (i = 0; i < 5; i++) {
 		scanf("%d", &a);
 		arr1[i] = a;
-	}
+	    }
 	    for (i = 0; i < 5; i++) {
 		scanf("%d", &b);
 		arr2[i] = b;
         if(arr1[i] == arr2[i]) {
                 ok++;
             }
-	}
+	    }
         if(ok == 5) {
             printf("same\n");
         } else {

@@ -1,25 +1,41 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+// int main() {
+// 	int i, j, a, b;
 
-int main() {
-	int i, j;
-	double a, ave, sum = 0;
-	double arr[10000];
+// 	scanf("%d", &a); // 첫 번째 입력받은 수
+// 	int arr[10000];
+// 	arr[0] = a;
 
-	for (i = 0;; i++)
-	{
-		scanf("%lf", &a);
-		if (a != 0) {
-			arr[i] = a;
-			sum += arr[i];
-		}
-		else break;
-	}
-	ave = sum / i;
-	printf("%.1f\n", ave);
-	for (j = 0; j < i; j++) {
-		if (arr[j] < ave) {
-			printf("%.1lf ", arr[j]);
-		}
-	}
+// 	if (a != 0) {
+// 		for (i = 0;; i++) {
+// 			scanf("%d", &b);
+// 			if (b == 0) break;
+// 			arr[i + 1] = b;
+// 		}
+// 		printf("%d\n", i+1);
+// 		for (j = i; j >= 0; j--) {
+// 			printf("%d ", arr[j]);
+// 		}
+// 	}
+// 	else {
+// 		printf("%d\n%d", 0, arr[0]);
+// 	}
+// 	return 0;
+// }
+
+void main() {
+    int a[100];
+    int count = 0;
+    while(1) {
+        scanf("%d", &a[count]);
+        if(!a[count]) {
+            break;
+        }
+        count++;
+    }
+    printf("%d\n", count);
+    while(count) {
+        printf("%d", a[--count]);
+    }
 }
