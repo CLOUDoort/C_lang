@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 int main() {
-    int index = 0;
     int arr[1000];
+    int index = 0;
 
     while(1) {
         scanf("%d", &arr[index]);
@@ -12,15 +12,16 @@ int main() {
     }
 
     for(int i = 0; i < index; i++) {
-        for(int j = 0; j < index; j++) {
-            if(arr[i] < arr[j]) {
-                int temp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = temp;
+        for(int j = i; j < index; j++) {
+            if(arr[i] > arr[j]) {
+                int a = arr[i];
+                arr[i] = arr[j];
+                arr[j] = a;
             }
         }
     }
+
     for(int i = 0; i < index; i++) {
-        printf("%d", arr[i]);
+        printf("%d ", arr[i]);
     }
 }

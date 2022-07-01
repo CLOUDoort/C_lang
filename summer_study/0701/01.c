@@ -2,21 +2,19 @@
 #include <stdio.h>
 
 int main() {
-    int arr[100];
+    int arr[1000];
     int index = 0;
+    double sum = 0;
 
     while(1) {
         scanf("%d", &arr[index]);
-        if(!arr[index]) break;
+        if(arr[index] < 0) break;
         index++;
     }
-    int max = arr[0];
-    int min = arr[0];
 
     for(int i = 0; i < index; i++) {
-        if(arr[i] > max) max = arr[i];
-        if(arr[i] < min) min = arr[i];
+        sum += arr[i];
     }
 
-    printf("%d %d", max, min);
+    printf("%.2lf", sum / index);
 }
