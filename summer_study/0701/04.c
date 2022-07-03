@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-int max(int a, int b, int c, int i;);
+int max(int a, int b, int c);
 int middle(int a, int b, int c);
 int min(int a, int b, int c);
 
@@ -14,7 +14,7 @@ int main() {
         index++;
     }
     for(int i = 0; i < index; i++) {
-        printf("%d %d %d\n", max(a[i], b[i], c[i]), min(a[i], b[i], c[i]), middle(a[i], b[i], c[i]))
+        printf("%d %d %d\n", max(a[i], b[i], c[i]), min(a[i], b[i], c[i]), middle(a[i], b[i], c[i]));
     }
 }
 
@@ -23,28 +23,30 @@ int max(int a, int b, int c) {
     int arr[3] = {a, b, c};
     int max = arr[0];
     for(i = 0; i < 3; i++) {
-        if(arr[i] > max) arr[i] = max;
+        if(arr[i] > max) max = arr[i];
     }
+    return max;
 }
 int middle(int a, int b, int c) {
-    int middle;
-    if(a > b) {
-        if(b > c) middle = b;
-    } else {
-        if(a > c) middle = a;
+    int arr[3] = {a, b, c};
+
+    for(int i = 0; i < 3; i++) {
+        for(int j = i; j < 3; j++) {
+            if(arr[i] > arr[j]) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
     }
+    return arr[1];
 }
 int min(int a, int b, int c) {
     int i;
     int arr[3] = {a, b, c};
     int min = arr[0];
     for(i = 0; i < 3; i++) {
-        if(arr[i] < min) arr[i] = min;
+        if(arr[i] < min) min = arr[i];
     }
+    return min;
 }
-
-int i;
-    int arr[3] = {a, b, c};
-    int middle = arr[0];
-    for(i = 0; i < 3; i++) {
-    }
