@@ -1,0 +1,5 @@
+ MiRaeYoon 90 85 75
+ JaeSandPark 75 68 99
+ GunYoon    85 85 60
+ ULALA 80 70 95
+ BUSKER 75 90 88
