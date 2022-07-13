@@ -11,10 +11,11 @@ int main() {
     while(ptoken) {
         for(int i = 0, j = (int)strlen(ptoken) - 1; i < j; i++, j--) {
             char c = ptoken[i];
-            ptoken[j] = ptoken[i];
-            ptoken[i] = c;
+            ptoken[i] = ptoken[j];
+            ptoken[j] = c;
         }
-        printf("%s", ptoken);
+        printf("%s ", ptoken);
         ptoken = strtok(NULL, " ");
     }
+    return 0;
 }
