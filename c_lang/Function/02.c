@@ -16,11 +16,15 @@ int main() {
 int prime(int n) {
     int ok = 2;
     for(int i = 5; i < n; i++) {
-        if(n % 2 == 0) continue;
-        for(int j = 3; j < n; j+=2) {
-            if(i % j != 0) {
-                ok++;
+        int count = 0;
+        if(i % 2 == 0) continue;
+        for(int j = 2; j < n; j++) {
+            if(i % j == 0) {
+                count++;
             }
+        }
+        if(count == 0) {
+            ok++;
         }
     }
 
